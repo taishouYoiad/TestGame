@@ -11,11 +11,6 @@ function MainScene:onCreate()
     cc.Menu:create(playButton)
     		:move(display.center)
     		:addTo(self)
-    -- cc.MenuItem:onClicked(function()	return self:enterScene(PlayScene)	end)
-    -- add HelloWorld label
-    -- cc.Label:createWithSystemFont("Hello World", "Arial", 40)
-    --     :move(display.cx, display.cy + 200)
-    --     :addTo(self)
 
 end
 

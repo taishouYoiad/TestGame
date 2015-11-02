@@ -10,6 +10,8 @@ function ZS:ctor()
 	self.canSkill = 1
 	self.go = 1
 	self.speed = 10
+
+	self.cooldown = 2
 end
 
 function ZS:newZS()
@@ -20,6 +22,13 @@ function ZS:newZS()
 end
 
 function ZS:step(dt)
+	if self.ghost.canSkill <= 0 then
+		self.cooldown = self.cooldown - dt
+		if self.cooldown <= 0 then
+			self.cooldown = 2
+			self.ghost:baseStep()
+		end
+	end
 	if self.go == 0 then
 		return
 	end
@@ -36,7 +45,9 @@ function ZS:shaAction()
 end
 
 function ZS:skillAction()
-	return self.ghost:skillAction(self.x,self.y,self.canSkill)
+	local offset_x = 250
+	local offset_y = 120
+	return self.ghost:skillAction(self.x,self.y,self.canSkill,offset_x,offset_y)
 end
 
 function ZS:jsAction()

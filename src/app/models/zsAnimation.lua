@@ -8,7 +8,7 @@ function zsAnimation:ctor()
 	local t = {{0,self.wSpeed,"zs_walk"},{4,self.sSpeed,"zs_sha"},{7,0.15,"zs_skill"}}
 	local filename = "zs.png"
 	self:createAnimation(filename,t)
-	local skillInfo = {"j","zs_boom"}
+	local skillInfo = {"j","zs_boom",32}
 	self:createTestSkill(skillInfo)
 end
 

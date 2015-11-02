@@ -20,7 +20,8 @@ end
 
 function baseAnimation:createTestSkill(infotable)
 	local frames = {}
-	for i = 0,33 do
+	local count = tonumber(infotable[3])
+	for i = 0,count do
 		local filename = infotable[1]..i..".png"
 		local image = display.loadImage(filename)
 		local eWidth = image:getPixelsWide()
